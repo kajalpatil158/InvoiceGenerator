@@ -32,11 +32,8 @@ public class InvoiceGenerator {
 	 * @Description- array of ride Is Created and check a rides value. calculated a
 	 * total fare.
 	 */
-	public double calculateFare(Ride[] rides) {
-		double total_Fare = 0;
-		for (Ride ride : rides) {
-			total_Fare += this.CalculateFare(ride.distance, ride.time);
-		}
-		return total_Fare;
+	public double calculateAverageFare(int noOfRides, double totalFare) {
+		double averageFare= totalFare/noOfRides;
+		return averageFare;
 	}
 }
