@@ -3,7 +3,6 @@ package com.invoiceGenerator;
 import org.junit.Test;
 
 import org.junit.Assert;
-import org.junit.Before;
 
 /*@Description-In InvoiceGeneratorTest check a given Distance And Time The Invoice Generator should Return  
  * The Total Fare Fore Journey.
@@ -11,9 +10,7 @@ import org.junit.Before;
  * If both are equal Test Case Pass.
  * Otherwise Testcase Fail.*/
 public class InvoiceGeneratorTest {
-	@Before
-	
-	
+
 	@Test
 	public void givenDistanceAndTimeTheInvoiceGenerator_ShouldReturnTheTotalFareForeJourney() {
 		InvoiceGenerator invoicegenerator = new InvoiceGenerator();
@@ -40,7 +37,14 @@ public class InvoiceGeneratorTest {
 	@Test
 	public void givenMultipleRide_ShouldReturnInvoiceSummary() {
 		InvoiceGenerator invoicegenerator = new InvoiceGenerator();
-		double fare=invoicegenerator.calculateAverageFare(2, 10);
-		Assert.assertEquals(5, fare,0.0);
+		double fare = invoicegenerator.calculateAverageFare(2, 10);
+		Assert.assertEquals(5, fare, 0.0);
+	}
+
+	@Test
+	public void givenUserIdTheInvoiceService_ShouldReturnIvoice() {
+		InvoiceGenerator invoicegenerator = new InvoiceGenerator();
+		int check = invoicegenerator.RideRepository(5);
+		Assert.assertEquals(5, check);
 	}
 }

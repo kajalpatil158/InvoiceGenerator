@@ -33,7 +33,24 @@ public class InvoiceGenerator {
 	 * total fare.
 	 */
 	public double calculateAverageFare(int noOfRides, double totalFare) {
-		double averageFare= totalFare/noOfRides;
+		double averageFare = totalFare / noOfRides;
 		return averageFare;
 	}
+
+	/*
+	 * @Description- RideRepository method is created where ID is passes to check
+	 * that
+	 */
+	public int RideRepository(int i) {
+		Object fareDetails = rides.get(i);
+		int totalFare = 0;
+		for (int fare : fareDetails) {
+			totalFare = totalFare + fare;
+		}
+		int totalRides = ((Object) fareDetails).size();
+		double avg = (double) totalFare / (double) totalRides;
+		return new InvoiceSummary(noOfRides, totalFare, averageFare);
+	}
+
+	
 }
